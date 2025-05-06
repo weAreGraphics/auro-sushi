@@ -1,0 +1,176 @@
+{
+  "promociones": [
+    {
+      "nombre": "Huerto Vegetal",
+      "descripcion": "Imagina un huerto fresco y vibrante, lleno de variedad de vegetales deliciosos y saludables.",
+      "items": ["choclito", "palmito", "pepino", "pimentón", "champiñón"],
+      "precio": 8500,
+      "cantidad": 20
+    },
+    {
+      "nombre": "20 piezas",
+      "precio": 8500,
+      "items": [
+        { "tipo": "salmón", "ingredientes": ["queso crema", "cebollín"], "envuelto": "palta" },
+        { "tipo": "vegetal", "ingredientes": ["queso crema", "palta"], "envuelto": "sésamo" }
+      ]
+    },
+    {
+      "nombre": "20 piezas VIP",
+      "precio": 9990,
+      "items": [
+        { "tipo": "camarón", "ingredientes": ["queso crema", "cebollín"], "envuelto": "palta" },
+        { "tipo": "pollo", "ingredientes": ["queso crema", "cebollín"], "envuelto": "panko" }
+      ]
+    },
+    {
+      "nombre": "38 piezas Premium",
+      "precio": 16500,
+      "items": [
+        { "tipo": "camarón apanado", "ingredientes": ["queso crema", "cebollín"], "envuelto": "palta" },
+        { "tipo": "salmón", "ingredientes": ["palta"], "envuelto": "queso crema" },
+        { "tipo": "pollo", "ingredientes": ["queso crema", "cebollín"], "envuelto": "panko" }
+      ],
+      "gyosas": {
+        "cantidad": 8,
+        "sabores": ["pollo", "cerdo", "verduras", "camarón especial"]
+      }
+    },
+    {
+      "nombre": "30 piezas",
+      "precio": 12990,
+      "items": [
+        { "tipo": "salmón apanado", "ingredientes": ["cebollín", "palta"], "envuelto": "queso crema" },
+        { "tipo": "pollo", "ingredientes": ["queso crema", "palta"], "envuelto": "ciboulette" },
+        { "tipo": "hosomaki pollo", "envuelto": "alga nori" }
+      ]
+    },
+    {
+      "nombre": "40 piezas",
+      "precio": 11500,
+      "items": [
+        { "tipo": "salmón", "ingredientes": ["queso crema", "palta"], "envuelto": "palta" },
+        { "tipo": "vegetal", "ingredientes": ["queso crema", "palta"], "envuelto": "sésamo" },
+        { "tipo": "pollo", "ingredientes": ["queso crema", "cebollín"], "envuelto": "panko" },
+        { "tipo": "hosomaki pollo", "envuelto": "nori" }
+      ]
+    },
+    {
+      "nombre": "40 piezas Hot-Panko",
+      "precio": 14990,
+      "items": [
+        { "tipo": "pollo", "ingredientes": ["queso crema", "cebollín"], "envuelto": "panko" },
+        { "tipo": "camarón", "ingredientes": ["queso crema", "cebollín"], "envuelto": "panko" },
+        { "tipo": "kanikama", "ingredientes": ["queso crema", "cebollín"], "envuelto": "panko" },
+        { "tipo": "vegetal", "ingredientes": ["queso crema", "cebollín"], "envuelto": "panko" }
+      ]
+    },
+    {
+      "nombre": "50 piezas",
+      "precio": 16990,
+      "items": [
+        { "tipo": "vegetal", "ingredientes": ["queso crema", "palta"], "envuelto": "sésamo" },
+        { "tipo": "pollo", "ingredientes": ["queso crema", "palta"], "envuelto": "ciboulette" },
+        { "tipo": "salmón", "ingredientes": ["queso crema", "palta"], "envuelto": "palta" },
+        { "tipo": "kanikama", "ingredientes": ["queso crema", "cebollín"], "envuelto": "panko" },
+        { "tipo": "pollo", "ingredientes": ["queso crema", "cebollín"], "envuelto": "panko" }
+      ]
+    },
+    {
+      "nombre": "70 piezas",
+      "precio": 18990,
+      "items": [
+        { "tipo": "salmón", "ingredientes": ["queso crema", "cebollín"], "envuelto": "palta" },
+        { "tipo": "vegetal", "ingredientes": ["queso crema", "palta"], "envuelto": "sésamo" },
+        { "tipo": "pollo", "ingredientes": ["queso crema", "cebollín"], "envuelto": "panko" },
+        { "tipo": "kanikama", "ingredientes": ["queso crema", "cebollín"], "envuelto": "panko" },
+        { "tipo": "pollo", "ingredientes": ["pimentón", "queso crema", "cebollín"], "envuelto": "panko" },
+        { "tipo": "hosomaki pollo", "envuelto": "alga nori" },
+        { "tipo": "hosomaki palta", "envuelto": "alga nori" }
+      ]
+    },
+    {
+      "nombre": "70 piezas VIP",
+      "precio": 27990,
+      "items": [
+        { "tipo": "salmón", "ingredientes": ["queso crema"], "envuelto": "palta" },
+        { "tipo": "camarón apanado", "ingredientes": ["palta"], "envuelto": "queso crema" },
+        { "tipo": "kanikama", "ingredientes": ["queso crema", "palta"], "envuelto": "sésamo" },
+        { "tipo": "vegetal", "ingredientes": ["queso crema", "palta"], "envuelto": "ciboulette" },
+        { "tipo": "pollo", "ingredientes": ["queso crema", "cebollín"], "envuelto": "panko" },
+        { "tipo": "kanikama", "ingredientes": ["pimentón", "queso crema", "cebollín"], "envuelto": "panko" },
+        { "tipo": "hosomaki palta", "envuelto": "alga nori" }
+      ]
+    }
+  ],
+  "extras": {
+    "salsas": [
+      { "nombre": "soya", "precio": 800 },
+      { "nombre": "teriyaki (receta de casa)", "precio": 1000 },
+      { "nombre": "jengibre", "precio": 1000 }
+    ],
+    "utensilios": [
+      { "nombre": "palitos", "precio": 100 },
+      { "nombre": "ayuda palitos", "precio": 500 }
+    ],
+    "cambio_proteina": 1000
+  },
+  "handroll": {
+    "normal": {
+      "precio": 3500,
+      "sabores": ["pollo", "kanikama", "palmito", "champiñón", "choclillo", "pepino", "pimentón"]
+    },
+    "vip": {
+      "precio": 4500,
+      "sabores": ["camarón", "salmón", "carne", "pollo pimentón", "choclito palmito", "pepino pimentón"]
+    }
+  },
+  "gohan": [
+    { "nombre": "camarón", "precio": 6000 },
+    { "nombre": "salmón", "precio": 7000 },
+    { "nombre": "pollo", "precio": 6000 },
+    { "nombre": "kanikama", "precio": 6000 },
+    { "nombre": "verduras", "precio": 6500 },
+    { "nombre": "salmón apanado", "precio": 7000 },
+    { "nombre": "camarón apanado", "precio": 7000 }
+  ],
+  "sushi_burgers": {
+    "vip": [
+      { "nombre": "camarón, salmón apanado", "precio": 9990 },
+      { "nombre": "pollo apanado, camarón apanado", "precio": 9990 },
+      { "nombre": "choclito, palmito, champiñón", "precio": 9990 }
+    ],
+    "clasico": [
+      { "nombre": "pollo", "precio": 6500 },
+      { "nombre": "kanikama", "precio": 6500 },
+      { "nombre": "salmón", "precio": 6900 },
+      { "nombre": "camarón", "precio": 6900 },
+      { "nombre": "salmón apanado", "precio": 7500 },
+      { "nombre": "camarón apanado", "precio": 7500 }
+    ]
+  },
+  "acompañamientos": [
+    { "nombre": "papas fritas", "precio": 2000 },
+    { "nombre": "camarones apanados", "precio": 3000 },
+    { "nombre": "tiras de pollo apanado", "precio": 3000 },
+    { "nombre": "tiras de salmón apanado", "precio": 4000 },
+    { "nombre": "aros de cebolla apanado", "precio": 2500 }
+  ],
+  "ceviches": [
+    {
+      "nombre": "Auroclasico",
+      "ingredientes": ["tilapia", "camarón", "leche de tigre", "palta"],
+      "precio": 9990
+    },
+    {
+      "nombre": "Aurodivino",
+      "ingredientes": ["salmón", "tilapia", "camarón", "leche de tigre", "palta"],
+      "precio": 11990
+    },
+    {
+      "nombre": "Aurofusión",
+      "ingredientes": ["salmón", "calamar", "camarón", "atún", "tilapia", "leche de tigre", "palta"],
+      "precio": 14990
+    }
+  ]
+}

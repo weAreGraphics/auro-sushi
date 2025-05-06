@@ -1,0 +1,50 @@
+/* Contenedor de productos */
+#products {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+    gap: 20px; /* Espaciado entre productos */
+    margin: 20px;
+}
+
+/* Estilo para cada producto */
+.product {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.product:hover {
+    transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+}
+
+/* Título del producto */
+.product h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+/* Descripción del producto */
+.product p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Botón para agregar al carrito */
+.product button {
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.product button:hover {
+    background-color: #e64a19;
+}

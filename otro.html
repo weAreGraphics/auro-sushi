@@ -1,0 +1,287 @@
+// Archivo principal de la aplicación de la tienda en línea de sushi
+
+// Carrito de compras
+let cart = [];
+const wsapp = '+56973761422';
+
+const productsContainer = document.getElementById("products");
+const cartItemsContainer = document.getElementById("cart-items");
+const checkoutButton = document.getElementById("checkout");
+const cartCount = document.getElementById("cart-count");
+
+// Función para renderizar las categorías
+function renderCategories() {
+    const categoriesContainer = document.createElement("section");
+    categoriesContainer.id = "categories";
+    categoriesContainer.style.display = "grid";
+    categoriesContainer.style.gridTemplateColumns = "repeat(2, 1fr)";
+    categoriesContainer.style.gap = "20px";
+    categoriesContainer.style.margin = "20px 0";
+
+    fetch("data/categories.json")
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Error al cargar las categorías: ${response.statusText}`);
+            }
+            return response.json();
+        })
+        .then(categories => {
+            categories.forEach(category => {
+                const categoryElement = document.createElement("div");
+                categoryElement.classList.add("category");
+                categoryElement.style.textAlign = "center";
+                categoryElement.style.border = "1px solid #ddd";
+                categoryElement.style.borderRadius = "8px";
+                categoryElement.style.padding = "10px";
+                categoryElement.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.1)";
+                categoryElement.style.cursor = "pointer";
+
+                categoryElement.innerHTML = `
+                    <a href="#products" class="category-link" data-id="${category.id}" style="text-decoration: none; color: inherit;">
+                        <h3>${category.name}</h3>
+                    </a>
+                `;
+
+                categoriesContainer.appendChild(categoryElement);
+            });
+
+            const mainContainer = document.querySelector("main");
+            mainContainer.insertBefore(categoriesContainer, mainContainer.firstChild);
+
+            setupCategoryLinks();
+        })
+        .catch(error => {
+            console.error("Error al cargar las categorías:", error);
+        });
+}
+
+// Función para configurar los enlaces de las categorías
+function setupCategoryLinks() {
+    const categoryLinks = document.querySelectorAll(".category-link");
+    categoryLinks.forEach(link => {
+        link.addEventListener("click", (event) => {
+            event.preventDefault();
+            const categoryId = parseInt(link.getAttribute("data-id"));
+            renderProductsByCategory(categoryId);
+
+            const productsSection = document.getElementById("products");
+            productsSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+    });
+}
+
+// Función para renderizar productos por categoría
+function renderProductsByCategory(categoryId) {
+    productsContainer.innerHTML = "";
+
+    fetch("data/products.json")
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Error al cargar los productos: ${response.statusText}`);
+            }
+            return response.json();
+        })
+        .then(products => {
+            const filteredProducts = products.filter(product => product.categoryId === categoryId);
+
+            filteredProducts.forEach(product => {
+                const productElement = document.createElement("div");
+                productElement.classList.add("product");
+
+                productElement.innerHTML = `
+                    <h3>${product.name}</h3>
+                    <p>${product.description}</p>
+                    <p>Precio: $${product.price.toFixed(2)}</p>
+                    <div class="quantity-controls">
+                        <button class="decrease" data-id="${product.id}">-</button>
+                        <span class="quantity" id="quantity-${product.id}">1</span>
+                        <button class="increase" data-id="${product.id}">+</button>
+                    </div>
+                    <select id="protein-${product.id}" class="protein-options">
+                        <option value="chicken">Pollo</option>
+                        <option value="beef">Carne</option>
+                        <option value="tofu">Tofu</option>
+                        <option value="salmon">Salmón</option>
+                    </select>
+                    <button class="add-to-cart" data-id="${product.id}">Agregar al carrito</button>
+                `;
+
+                productsContainer.appendChild(productElement);
+            });
+
+            setupQuantityButtons();
+            setupAddToCartButtons(filteredProducts);
+        })
+        .catch(error => {
+            console.error("Error al cargar los productos:", error);
+        });
+}
+
+// Configurar botones para incrementar y decrementar la cantidad
+function setupQuantityButtons() {
+    const increaseButtons = document.querySelectorAll(".increase");
+    const decreaseButtons = document.querySelectorAll(".decrease");
+
+    increaseButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            const productId = button.getAttribute("data-id");
+            const quantityElement = document.getElementById(`quantity-${productId}`);
+            let currentQuantity = parseInt(quantityElement.textContent);
+
+            if (currentQuantity < 10) {
+                quantityElement.textContent = currentQuantity + 1;
+            }
+        });
+    });
+
+    decreaseButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            const productId = button.getAttribute("data-id");
+            const quantityElement = document.getElementById(`quantity-${productId}`);
+            let currentQuantity = parseInt(quantityElement.textContent);
+
+            if (currentQuantity > 1) {
+                quantityElement.textContent = currentQuantity - 1;
+            }
+        });
+    });
+}
+
+// Configurar botones para agregar productos al carrito
+function setupAddToCartButtons(products) {
+    const buttons = document.querySelectorAll(".add-to-cart");
+    buttons.forEach(button => {
+        button.addEventListener("click", () => {
+            const productId = parseInt(button.getAttribute("data-id"));
+            addToCart(productId, products);
+        });
+    });
+}
+
+// Función para agregar productos al carrito
+function addToCart(productId, products) {
+    const product = products.find(p => p.id === productId);
+    if (product) {
+        const quantityElement = document.getElementById(`quantity-${productId}`);
+        const selectedQuantity = parseInt(quantityElement.textContent);
+
+        const proteinSelect = document.getElementById(`protein-${productId}`);
+        const selectedProtein = proteinSelect.value;
+
+        const existingProduct = cart.find(item => item.id === productId && item.protein === selectedProtein);
+        if (existingProduct) {
+            existingProduct.quantity += selectedQuantity;
+        } else {
+            cart.push({ ...product, quantity: selectedQuantity, protein: selectedProtein });
+        }
+
+        updateCartUI();
+    }
+}
+
+// Función para actualizar la interfaz del carrito
+function updateCartUI() {
+    cartItemsContainer.innerHTML = "";
+
+    if (cart.length === 0) {
+        cartItemsContainer.innerHTML = `<p>El carrito está vacío.</p>`;
+        cartCount.textContent = 0;
+        checkoutButton.textContent = "Enviar Pedido por WhatsApp (0 items)";
+        checkoutButton.disabled = true;
+        return;
+    }
+
+    cartItemsContainer.style.display = "block";
+
+    cart.forEach(item => {
+        const cartItemElement = document.createElement("div");
+        cartItemElement.classList.add("cart-item");
+
+        cartItemElement.innerHTML = `
+            <p>${item.name} - $${item.price.toFixed(2)} x ${item.quantity}</p>
+            <p>Proteína: ${item.protein}</p>
+            <div class="cart-item-controls">
+                <button class="decrease-cart" data-id="${item.id}" data-protein="${item.protein}">-</button>
+                <span>${item.quantity}</span>
+                <button class="increase-cart" data-id="${item.id}" data-protein="${item.protein}">+</button>
+                <button class="remove-cart" data-id="${item.id}" data-protein="${item.protein}">Eliminar</button>
+            </div>
+        `;
+
+        cartItemsContainer.appendChild(cartItemElement);
+    });
+
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    cartCount.textContent = totalItems;
+    checkoutButton.textContent = `Enviar Pedido por WhatsApp (${totalItems} items)`;
+    checkoutButton.disabled = false;
+
+    setupCartEditButtons();
+}
+
+// Configurar botones de edición del carrito
+function setupCartEditButtons() {
+    const increaseButtons = document.querySelectorAll(".increase-cart");
+    const decreaseButtons = document.querySelectorAll(".decrease-cart");
+    const removeButtons = document.querySelectorAll(".remove-cart");
+
+    increaseButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            const productId = parseInt(button.getAttribute("data-id"));
+            const protein = button.getAttribute("data-protein");
+            const product = cart.find(item => item.id === productId && item.protein === protein);
+            if (product) {
+                product.quantity += 1;
+                updateCartUI();
+            }
+        });
+    });
+
+    decreaseButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            const productId = parseInt(button.getAttribute("data-id"));
+            const protein = button.getAttribute("data-protein");
+            const product = cart.find(item => item.id === productId && item.protein === protein);
+            if (product && product.quantity > 1) {
+                product.quantity -= 1;
+                updateCartUI();
+            } else if (product && product.quantity === 1) {
+                cart = cart.filter(item => !(item.id === productId && item.protein === protein));
+                updateCartUI();
+            }
+        });
+    });
+
+    removeButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            const productId = parseInt(button.getAttribute("data-id"));
+            const protein = button.getAttribute("data-protein");
+            cart = cart.filter(item => !(item.id === productId && item.protein === protein));
+            updateCartUI();
+        });
+    });
+}
+
+// Función para enviar el pedido por WhatsApp
+function sendOrder() {
+    if (cart.length === 0) {
+        alert("El carrito está vacío. Agrega productos antes de enviar el pedido.");
+        return;
+    }
+
+    const orderDetails = cart
+        .map(item => `${item.name} (${item.protein}) x${item.quantity} - $${(item.price * item.quantity).toFixed(2)}`)
+        .join("\n");
+
+    const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+    const message = `Hola, me gustaría realizar el siguiente pedido:\n\n${orderDetails}\n\nTotal: $${total.toFixed(2)}`;
+    const whatsappUrl = `https://wa.me/${wsapp}?text=${encodeURIComponent(message)}`;
+
+    window.open(whatsappUrl, "_blank");
+}
+
+checkoutButton.addEventListener("click", sendOrder);
+
+// Renderizar las categorías al cargar la página
+renderCategories();

@@ -1,0 +1,311 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+header {
+    background-color: #ffcc00;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+.product {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #fff;
+    transition: transform 0.2s;
+}
+
+.product img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.product h2 {
+    font-size: 1.5em;
+    color: #333;
+}
+
+.product p {
+    color: #666;
+}
+
+.button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #218838;
+}
+
+.cart {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cart h2 {
+    font-size: 1.2em;
+    color: #333;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+}
+
+.cart-item span {
+    color: #666;
+}
+
+.checkout-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.checkout-button:hover {
+    background-color: #0056b3;
+}
+
+
+/* Contenedor de productos */
+#products {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+    gap: 10px; /* Espaciado entre productos */
+    margin: 20px;
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+/* Estilo para cada producto */
+.product {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+/* Título del producto */
+.product h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+/* Descripción del producto */
+.product p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Botón para agregar al carrito */
+.product button {
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.product button:hover {
+    background-color: #e64a19;
+}
+
+/* Controles de cantidad */
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.quantity-controls button {
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.quantity-controls button:hover {
+    background-color: #e64a19;
+}
+
+.quantity-controls .quantity {
+    margin: 0 10px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+/* Estilo para las categorías */
+#categories {
+    margin: 20px 0;
+    width: 90%;
+    margin: auto !important;
+    margin-top: 20px !important;
+}
+
+.category{
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.category img {
+    transition: transform 0.2s ease;
+}
+
+.category:hover img {
+    transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+}
+
+.category h3 {
+    font-size: clamp(.7rem, .9rem, 2rem);
+    color: #333;
+}
+
+/* Estilo para el acordeón */
+.accordion {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.accordion-header {
+    background-color: #ffcc00;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #333;
+}
+
+.accordion-header:hover {
+    background-color: #ffb300;
+}
+
+.accordion-content {
+    padding: 10px;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+}
+
+/* Controles de edición del carrito */
+.cart-item-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.cart-item-controls button {
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.cart-item-controls button:hover {
+    background-color: #e64a19;
+}
+
+.cart-item-controls span {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Estilo para el contenedor del carrito */
+#cart-items {
+    position: fixed; /* Fijar el contenedor en la parte superior */
+    top: 0; /* Alinear al borde superior */
+    left: 0; /* Alinear al borde izquierdo */
+    width: 100%; /* Ocupa todo el ancho de la ventana */
+    background-color: #fff; /* Fondo blanco */
+    z-index: 1000; /* Asegurar que esté por encima de otros elementos */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+    border-bottom: 1px solid #ddd; /* Línea inferior */
+}
+
+/* Estilo para los elementos dentro del carrito */
+#cart-items .cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#cart-items .cart-item p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+#cart-items .cart-item-controls button {
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+#cart-items .cart-item-controls button:hover {
+    background-color: #e64a19;
+}
+
+/* Estilo para el botón de checkout fijo en la parte inferior */
+#checkout {
+    position: fixed; /* Fijar el botón en la parte inferior */
+    bottom: 0; /* Alinear al borde inferior */
+    left: 0; /* Alinear al borde izquierdo */
+    width: 100%; /* Ocupa todo el ancho de la ventana */
+    background-color: #007bff; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none; /* Sin bordes */
+    padding: 15px 20px; /* Espaciado interno */
+    font-size: 1rem; /* Tamaño de fuente */
+    text-align: center; /* Centrar el texto */
+    cursor: pointer; /* Cambiar el cursor al pasar el mouse */
+    z-index: 1000; /* Asegurar que esté por encima de otros elementos */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+    transition: background-color 0.2s ease; /* Transición para el hover */
+}
+
+#checkout:hover {
+    background-color: #0056b3; /* Color de fondo al pasar el mouse */
+}

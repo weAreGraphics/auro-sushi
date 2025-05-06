@@ -1,0 +1,1 @@
+Este archivo es un marcador de posición y puede ser utilizado para almacenar información temporal o notas sobre el proyecto.

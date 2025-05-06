@@ -1,0 +1,52 @@
+[
+    { "id": 1, "name": "Pollo", "description": "Delicioso sushi clásico.", "price": 3.500, "categoryId": 1 },
+    { "id": 2, "name": "Kanikama", "description": "Sushi clásico con atún fresco.", "price": 3.500 , "categoryId": 1 },
+    { "id": 3, "name": "Palmito", "description": "Sushi clásico con camarón.", "price":3.500, "categoryId": 1 },
+    { "id": 4, "name": "Champiñón", "description": "Sushi clásico vegetariano.", "price": 3.500, "categoryId": 1 },
+    { "id": 5, "name": "Choclillo", "description": "Sushi clásico mixto.", "price": 3.500, "categoryId": 1 },
+    { "id": 6, "name": "Pepino", "description": "Sushi clásico con salmón especial.", "price": 3.500, "categoryId": 1 },
+    { "id": 7, "name": "Pimnetón", "description": "Sushi clásico con atún especial.", "price": 3.500, "categoryId": 1 },
+
+ 
+    { "id": 8, "name": "Gohan", "description": "Gohan de camarón", "price": 6000, "categoryId": 2 },
+    { "id": 9, "name": "Gohan", "description": "Gohan de salmón", "price": 7000, "categoryId": 2 },
+    { "id": 10, "name": "Gohan", "description": "Gohan de pollo", "price": 6500, "categoryId": 2 },
+    { "id": 11, "name": "Gohan", "description": "Gohan de kanikama", "price": 6000, "categoryId": 2 },
+    { "id": 12, "name": "Gohan", "description": "Gohan de verduras", "price": 6500, "categoryId": 2 },
+    { "id": 13, "name": "Gohan", "description": "Gohan de salmón apanado", "price": 7000, "categoryId": 2 },
+    { "id": 14, "name": "Gohan", "description": "Gohan de camarón apanado", "price": 7000, "categoryId": 2 },
+    
+
+    { "id": 21, "name": "Temaki de Salmón", "description": "Temaki con salmón fresco.", "price": 5.50, "categoryId": 3 },
+    { "id": 22, "name": "Temaki de Atún", "description": "Temaki con atún fresco.", "price": 5.50, "categoryId": 3 },
+    { "id": 23, "name": "Temaki Vegetariano", "description": "Temaki vegetariano fresco.", "price": 4.50, "categoryId": 3 },
+    { "id": 24, "name": "Temaki Mixto", "description": "Temaki con ingredientes mixtos.", "price": 6.00, "categoryId": 3 },
+    { "id": 25, "name": "Temaki Especial", "description": "Temaki especial con ingredientes premium.", "price": 7.00, "categoryId": 3 },
+    { "id": 26, "name": "Temaki de Camarón", "description": "Temaki con camarón fresco.", "price": 5.50, "categoryId": 3 },
+    { "id": 27, "name": "Temaki Deluxe", "description": "Temaki deluxe con ingredientes premium.", "price": 8.00, "categoryId": 3 },
+    { "id": 28, "name": "Temaki de Anguila", "description": "Temaki con anguila fresca.", "price": 7.50, "categoryId": 3 },
+    { "id": 29, "name": "Temaki de Cangrejo", "description": "Temaki con cangrejo fresco.", "price": 6.50, "categoryId": 3 },
+    { "id": 30, "name": "Temaki Vegetariano Deluxe", "description": "Temaki vegetariano deluxe.", "price": 5.00, "categoryId": 3 },
+
+    { "id": 31, "name": "Nigiri de Salmón", "description": "Nigiri con salmón fresco.", "price": 5.00, "categoryId": 4 },
+    { "id": 32, "name": "Nigiri de Atún", "description": "Nigiri con atún fresco.", "price": 5.50, "categoryId": 4 },
+    { "id": 33, "name": "Nigiri de Camarón", "description": "Nigiri con camarón fresco.", "price": 6.00, "categoryId": 4 },
+    { "id": 34, "name": "Nigiri Mixto", "description": "Nigiri con ingredientes mixtos.", "price": 7.00, "categoryId": 4 },
+    { "id": 35, "name": "Nigiri Especial", "description": "Nigiri especial con ingredientes premium.", "price": 8.00, "categoryId": 4 },
+    { "id": 36, "name": "Nigiri Deluxe", "description": "Nigiri deluxe con ingredientes premium.", "price": 9.00, "categoryId": 4 },
+    { "id": 37, "name": "Nigiri de Anguila", "description": "Nigiri con anguila fresca.", "price": 7.50, "categoryId": 4 },
+    { "id": 38, "name": "Nigiri de Cangrejo", "description": "Nigiri con cangrejo fresco.", "price": 6.50, "categoryId": 4 },
+    { "id": 39, "name": "Nigiri Vegetariano", "description": "Nigiri vegetariano fresco.", "price": 5.50, "categoryId": 4 },
+    { "id": 40, "name": "Nigiri Vegetariano Deluxe", "description": "Nigiri vegetariano deluxe.", "price": 6.00, "categoryId": 4 },
+
+    { "id": 41, "name": "Sashimi de Salmón", "description": "Sashimi con salmón fresco.", "price": 6.00, "categoryId": 5 },
+    { "id": 42, "name": "Sashimi de Atún", "description": "Sashimi con atún fresco.", "price": 6.50, "categoryId": 5 },
+    { "id": 43, "name": "Sashimi Mixto", "description": "Sashimi con ingredientes mixtos.", "price": 7.50, "categoryId": 5 },
+    { "id": 44, "name": "Sashimi Especial", "description": "Sashimi especial con ingredientes premium.", "price": 8.00, "categoryId": 5 },
+    { "id": 45, "name": "Sashimi Vegetariano", "description": "Sashimi vegetariano fresco.", "price": 5.50, "categoryId": 5 },
+    { "id": 46, "name": "Sashimi Deluxe", "description": "Sashimi deluxe con ingredientes premium.", "price": 9.00, "categoryId": 5 },
+    { "id": 47, "name": "Sashimi de Camarón", "description": "Sashimi con camarón fresco.", "price": 6.50, "categoryId": 5 },
+    { "id": 48, "name": "Sashimi de Anguila", "description": "Sashimi con anguila fresca.", "price": 7.50, "categoryId": 5 },
+    { "id": 49, "name": "Sashimi de Cangrejo", "description": "Sashimi con cangrejo fresco.", "price": 6.50, "categoryId": 5 },
+    { "id": 50, "name": "Sashimi Vegetariano Deluxe", "description": "Sashimi vegetariano deluxe.", "price": 6.00, "categoryId": 5 }
+]

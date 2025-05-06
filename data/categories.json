@@ -1,0 +1,10 @@
+[
+    { "id": 1, "name": "Handroll", "image": "images/sushi-clasico.jpg" },
+    { "id": 2, "name": "Gohan", "image": "images/rollos-especiales.jpg" },
+    { "id": 3, "name": "Temaki", "image": "images/temaki.jpg" },
+    { "id": 4, "name": "Nigiri", "image": "images/nigiri.jpg" },
+    { "id": 5, "name": "Sashimi", "image": "images/sashimi.jpg" },
+    { "id": 6, "name": "Entradas", "image": "images/entradas.jpg" },
+    { "id": 7, "name": "Bebidas", "image": "images/bebidas.jpg" },
+    { "id": 8, "name": "Postres", "image": "images/postres.jpg" }
+]
