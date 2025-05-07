@@ -48,3 +48,13 @@
 .product button:hover {
     background-color: #e64a19;
 }
+
+.category a {
+    background-color: lightgrey;
+    border-radius: 8px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+}
