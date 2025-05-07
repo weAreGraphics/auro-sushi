@@ -174,10 +174,12 @@ h1 {
 }
 /* Estilo para las categorías */
 #categories {
-    margin: 20px 0;
+    display: flex;
+    flex-flow: wrap;
+    gap: 10px;
     width: 90%;
-    margin: auto !important;
-    margin-top: 20px !important;
+    margin: auto;
+    margin-top: 20px
 }
 
 .categories{
@@ -187,7 +189,6 @@ h1 {
 
 .category {
     width: 47%;
-    height: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
