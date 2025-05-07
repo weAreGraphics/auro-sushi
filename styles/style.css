@@ -32,12 +32,14 @@ h1 {
 .product h2 {
     font-size: 1.5em;
     color: #333;
+    margin: 0;
 }
 
 .product p {
-    color: #666;
+    font-size: 0.9rem;
+    color: #555;
+    margin: 0;
 }
-
 .button {
     background-color: #28a745;
     color: white;
@@ -122,12 +124,7 @@ h1 {
     
 }
 
-/* Descripción del producto */
-.product p {
-    font-size: 0.9rem;
-    color: #555;
-    margin-bottom: 10px;
-}
+
 
 /* Botón para agregar al carrito */
 .product button {
