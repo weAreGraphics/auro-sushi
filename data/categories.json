@@ -5,6 +5,6 @@
     { "id": 4, "name": "Nigiri", "image": "images/nigiri.jpg" },
     { "id": 5, "name": "Sashimi", "image": "images/sashimi.jpg" },
     { "id": 6, "name": "Entradas", "image": "images/entradas.jpg" },
-    { "id": 7, "name": "Acompañamientos", "image": "images/bebidas.jpg" },
-    { "id": 8, "name": "Postres", "image": "images/postres.jpg" }
+    { "id": 7, "name": "Agregados", "image": "images/bebidas.jpg" },
+    { "id": 8, "name": "Extras", "image": "images/postres.jpg" }
 ]
