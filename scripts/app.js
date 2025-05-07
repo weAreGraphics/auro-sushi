@@ -149,23 +149,7 @@ function setupQuantityButtons() {
         });
     });
 
-    // Agregar un select con opciones de proteínas
-    const productElements = document.querySelectorAll(".product");
-    productElements.forEach(productElement => {
-        const productId = productElement.querySelector(".add-to-cart").getAttribute("data-id");
-
-        const proteinSelect = document.createElement("select");
-        proteinSelect.id = `protein-${productId}`;
-        proteinSelect.innerHTML = `
-            <option value="chicken">Pollo</option>
-            <option value="beef">Carne</option>
-            <option value="tofu">Tofu</option>
-            <option value="salmon">Salmón</option>
-        `;
-        proteinSelect.style.marginTop = "10px";
-
-        productElement.appendChild(proteinSelect);
-    });
+    
 
 
 }
