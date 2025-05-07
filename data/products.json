@@ -5,7 +5,7 @@
     { "id": 4, "name": "Champiñón", "description": "Sushi clásico vegetariano.", "price": 3500, "categoryId": 1 },
     { "id": 5, "name": "Choclillo", "description": "Sushi clásico mixto.", "price": 3500, "categoryId": 1 },
     { "id": 6, "name": "Pepino", "description": "Sushi clásico con salmón especial.", "price": 3500, "categoryId": 1 },
-    { "id": 7, "name": "Pimnetón", "description": "Sushi clásico con atún especial.", "price": 3500, "categoryId": 1 },
+    { "id": 7, "name": "Pimentón", "description": "Sushi clásico con atún especial.", "price": 3500, "categoryId": 1 },
 
  
     { "id": 8, "name": "Gohan", "description": "Gohan de camarón", "price": 6000, "categoryId": 2 },
