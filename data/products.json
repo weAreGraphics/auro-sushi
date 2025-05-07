@@ -48,5 +48,16 @@
     { "id": 47, "name": "Sashimi de Camarón", "description": "Sashimi con camarón fresco.", "price": 6.50, "categoryId": 5 },
     { "id": 48, "name": "Sashimi de Anguila", "description": "Sashimi con anguila fresca.", "price": 7.50, "categoryId": 5 },
     { "id": 49, "name": "Sashimi de Cangrejo", "description": "Sashimi con cangrejo fresco.", "price": 6.50, "categoryId": 5 },
-    { "id": 50, "name": "Sashimi Vegetariano Deluxe", "description": "Sashimi vegetariano deluxe.", "price": 6.00, "categoryId": 5 }
+    { "id": 50, "name": "Sashimi Vegetariano Deluxe", "description": "Sashimi vegetariano deluxe.", "price": 6.00, "categoryId": 5 },
+
+    { "id": 61, "name": "Papas fritas", "description": "Sashimi con salmón fresco.", "price": 3000, "categoryId": 7 },
+    { "id": 62, "name": "5 Camarones apanados", "description": "Sashimi con atún fresco.", "price": 3000, "categoryId": 7 },
+    { "id": 63, "name": "5 Tiras de pollo apanado", "description": "Sashimi con ingredientes mixtos.", "price": 7.50, "categoryId": 7 },
+    { "id": 64, "name": "5 Tiras de salmón apanado", "description": "Sashimi especial con ingredientes premium.", "price": 8.00, "categoryId": 7 },
+    { "id": 65, "name": "5 Camarones apanados", "description": "Sashimi vegetariano fresco.", "price": 5.50, "categoryId": 7 },
+    { "id": 66, "name": "", "description": "", "price": 0, "categoryId": 7 },
+    { "id": 67, "name": "", "description": "", "price": 0, "categoryId": 7 },
+    { "id": 68, "name": "", "description": "", "price": 0, "categoryId": 7 },
+    { "id": 69, "name": "", "description": "", "price": 0, "categoryId": 7 },
+    { "id": 70, "name": "", "description": "", "price": 0, "categoryId": 7 }
 ]
