@@ -12,11 +12,11 @@ const cartCount = document.getElementById("cart-count");
 // Función para renderizar las categorías
 function renderCategories() {
     const categoriesContainer = document.createElement("section");
-    categoriesContainer.id = "categories";
-    categoriesContainer.style.display = "grid";
-    categoriesContainer.style.gridTemplateColumns = "repeat(2, 1fr)";
-    categoriesContainer.style.gap = "20px";
-    categoriesContainer.style.margin = "20px 0";
+    //categoriesContainer.id = "categories";
+    //categoriesContainer.style.display = "grid";
+    //categoriesContainer.style.gridTemplateColumns = "repeat(2, 1fr)";
+    //categoriesContainer.style.gap = "20px";
+    //categoriesContainer.style.margin = "20px 0";
 
     // Cargar las categorías desde el archivo JSON
     fetch("data/categories.json")
