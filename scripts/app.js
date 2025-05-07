@@ -30,12 +30,12 @@ function renderCategories() {
             categories.forEach(category => {
                 const categoryElement = document.createElement("div");
                 categoryElement.classList.add("category");
-                categoryElement.style.textAlign = "center";
-                categoryElement.style.border = "1px solid #ddd";
-                categoryElement.style.borderRadius = "8px";
-                categoryElement.style.padding = "10px";
-                categoryElement.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.1)";
-                categoryElement.style.cursor = "pointer";
+                //categoryElement.style.textAlign = "center";
+                //categoryElement.style.border = "1px solid #ddd";
+                //categoryElement.style.borderRadius = "8px";
+                //categoryElement.style.padding = "10px";
+                //categoryElement.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.1)";
+                //categoryElement.style.cursor = "pointer";
 
                 categoryElement.innerHTML = `
                     <a href="#products" class="category-link" data-id="${category.id}" style="text-decoration: none; color: inherit;">
