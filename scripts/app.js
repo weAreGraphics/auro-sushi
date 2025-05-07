@@ -12,7 +12,7 @@ const cartCount = document.getElementById("cart-count");
 // Función para renderizar las categorías
 function renderCategories() {
     const categoriesContainer = document.createElement("section");
-    //categoriesContainer.id = "categories";
+    categoriesContainer.id = "categories";
     //categoriesContainer.style.display = "grid";
     //categoriesContainer.style.gridTemplateColumns = "repeat(2, 1fr)";
     //categoriesContainer.style.gap = "20px";
