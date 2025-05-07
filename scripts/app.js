@@ -192,8 +192,10 @@ function addToCart(productId, products) {
         const selectedQuantity = parseInt(quantityElement.textContent);
 
         // Obtener la proteína seleccionada desde el <select>
+        /*
         const proteinSelect = document.getElementById(`protein-${productId}`);
         const selectedProtein = proteinSelect.value;
+        */
 
         // Verificar si el producto ya está en el carrito con la misma proteína
         const existingProduct = cart.find(item => item.id === productId && item.protein === selectedProtein);
