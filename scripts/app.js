@@ -105,13 +105,13 @@ function renderProductsByCategory(categoryId) {
                         <span class="quantity" id="quantity-${product.id}">1</span>
                         <button class="increase" data-id="${product.id}">+</button>
                     </div>
-                    <button class="add-to-cart" data-id="${product.id}">Agregar al carrito</button>
+                    <button class="add-to-cart" data-id="${product.id}">¡Lo llevo!</button>
                 `;
 
                 productsContainer.appendChild(productElement);
             });
 
-            // Configurar los botones de cantidad y agregar al carrito
+            // Configurar los botones de cantidad y Lo llevo!
             setupQuantityButtons();
             setupAddToCartButtons(filteredProducts);
         })
@@ -176,7 +176,7 @@ function setupAddToCartButtons(products) {
     buttons.forEach(button => {
         button.addEventListener("click", () => {
             const productId = parseInt(button.getAttribute("data-id"));
-            addToCart(productId, products); // Llamar a la función para agregar al carrito
+            addToCart(productId, products); // Llamar a la función para Lo llevo!
         });
     });
 }
