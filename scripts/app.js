@@ -191,23 +191,79 @@ function addToCart(productId, products) {
         const quantityElement = document.getElementById(`quantity-${productId}`);
         const selectedQuantity = parseInt(quantityElement.textContent);
 
+        if (isNaN(selectedQuantity) || selectedQuantity <= 0) {
+            alert("Por favor, selecciona una cantidad válida.");
+            return;
+        }
+
         // Obtener la proteína seleccionada desde el <select>
-        /*
         const proteinSelect = document.getElementById(`protein-${productId}`);
-        const selectedProtein = proteinSelect.value;
-        */
+        const selectedProtein = proteinSelect ? proteinSelect.value : null;
+
+        if (!selectedProtein) {
+            alert("Por favor, selecciona una proteína.");
+            return;
+        }
 
         // Verificar si el producto ya está en el carrito con la misma proteína
         const existingProduct = cart.find(item => item.id === productId && item.protein === selectedProtein);
         if (existingProduct) {
             existingProduct.quantity += selectedQuantity; // Incrementar la cantidad si ya está en el carrito
         } else {
-            cart.push({ ...product, quantity: selectedQuantity,}) //protein: selectedProtein }); // Agregar nuevo producto con la cantidad y proteína seleccionada
+            cart.push({ ...product, quantity: selectedQuantity, protein: selectedProtein }); // Agregar nuevo producto con la cantidad y proteína seleccionada
         }
 
         // Actualizar la interfaz del carrito
         updateCartUI();
     }
+}
+
+// Configurar botones para incrementar y decrementar la cantidad
+function setupQuantityButtons() {
+    const increaseButtons = document.querySelectorAll(".increase");
+    const decreaseButtons = document.querySelectorAll(".decrease");
+
+    increaseButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            const productId = button.getAttribute("data-id");
+            const quantityElement = document.getElementById(`quantity-${productId}`);
+            let currentQuantity = parseInt(quantityElement.textContent);
+
+            if (currentQuantity < 10) {
+                quantityElement.textContent = currentQuantity + 1; // Incrementar la cantidad
+            }
+        });
+    });
+
+    decreaseButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            const productId = button.getAttribute("data-id");
+            const quantityElement = document.getElementById(`quantity-${productId}`);
+            let currentQuantity = parseInt(quantityElement.textContent);
+
+            if (currentQuantity > 1) {
+                quantityElement.textContent = currentQuantity - 1; // Decrementar la cantidad
+            }
+        });
+    });
+
+    // Agregar un select con opciones de proteínas
+    const productElements = document.querySelectorAll(".product");
+    productElements.forEach(productElement => {
+        const productId = productElement.querySelector(".add-to-cart").getAttribute("data-id");
+
+        const proteinSelect = document.createElement("select");
+        proteinSelect.id = `protein-${productId}`;
+        proteinSelect.innerHTML = `
+            <option value="pollo">Pollo</option>
+            <option value="carne">Carne</option>
+            <option value="tofu">Tofu</option>
+            <option value="salmon">Salmón</option>
+        `;
+        proteinSelect.style.marginTop = "10px";
+
+        productElement.appendChild(proteinSelect);
+    });
 }
 
 // Llamar a la función para renderizar las categorías
