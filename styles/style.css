@@ -33,12 +33,14 @@ h1 {
     font-size: 1.5em;
     color: #333;
     margin: 0;
+    text-align: left;
 }
 
 .product p {
     font-size: 0.9rem;
     color: #555;
     margin: 0;
+    text-align: left;
 }
 .button {
     background-color: #28a745;
