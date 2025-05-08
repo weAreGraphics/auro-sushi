@@ -50,14 +50,14 @@
     { "id": 49, "name": "Sashimi de Cangrejo", "description": "Sashimi con cangrejo fresco.", "price": 6.50, "categoryId": 5 },
     { "id": 50, "name": "Sashimi Vegetariano Deluxe", "description": "Sashimi vegetariano deluxe.", "price": 6.00, "categoryId": 5 },
 
-    { "id": 61, "name": "Papas fritas", "description": "Sashimi con salmón fresco.", "price": 3000, "categoryId": 7 },
-    { "id": 62, "name": "5 Camarones apanados", "description": "Sashimi con atún fresco.", "price": 3000, "categoryId": 7 },
-    { "id": 63, "name": "5 Tiras de pollo apanado", "description": "Sashimi con ingredientes mixtos.", "price": 7.50, "categoryId": 7 },
-    { "id": 64, "name": "5 Tiras de salmón apanado", "description": "Sashimi especial con ingredientes premium.", "price": 8.00, "categoryId": 7 },
-    { "id": 65, "name": "5 Camarones apanados", "description": "Sashimi vegetariano fresco.", "price": 5.50, "categoryId": 7 },
-    { "id": 66, "name": "", "description": "", "price": 0, "categoryId": 7 },
-    { "id": 67, "name": "", "description": "", "price": 0, "categoryId": 7 },
-    { "id": 68, "name": "", "description": "", "price": 0, "categoryId": 7 },
-    { "id": 69, "name": "", "description": "", "price": 0, "categoryId": 7 },
-    { "id": 70, "name": "", "description": "", "price": 0, "categoryId": 7 }
+    { "id": 71, "name": "Auroclásico", "description": "Tilapia, camarón, leche tigre, palta", "price": 6990, "categoryId": 7 },
+    { "id": 72, "name": "Aurodivino", "description": "Salmón, tilapia, camarón, leche tigre, palta", "price": 3000, "categoryId": 7 },
+    { "id": 73, "name": "Aurofusión", "description": "sSalmón, calamar, camarón, atún, tilapia leche tigre, palta", "price": 14990, "categoryId": 7 },
+
+    { "id": 61, "name": "Papas fritas", "description": "Sashimi con salmón fresco.", "price": 3000, "categoryId": 8 },
+    { "id": 62, "name": "Camarones apanados", "description": "5 unidades envueltos en panko", "price": 3000, "categoryId": 8 },
+    { "id": 63, "name": "Tiras de pollo apanado", "description": "5 unidades envueltos en panko", "price": 4000, "categoryId": 8 },
+    { "id": 64, "name": "Tiras de salmón apanado", "description": "5 unidades envueltos en panko", "price": 2500, "categoryId": 8 }
 ]
+
+
