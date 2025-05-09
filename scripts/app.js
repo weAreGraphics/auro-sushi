@@ -622,3 +622,14 @@ document.addEventListener("DOMContentLoaded", () => {// Archivo principal de la 
     }
     
     });
+
+
+
+//swiper
+var swiper = new Swiper(".mySwiper", {
+    spaceBetween: 30,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
