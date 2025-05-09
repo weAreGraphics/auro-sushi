@@ -362,12 +362,13 @@ a.category-link {
 .swiper {
     width: 100%;
     height: 100%;
+    margin-bottom: 70px;
   }
 
   .swiper-slide {
     text-align: center;
     font-size: 18px;
-    background: #fff;
+    background: #f3f3f3;
     display: flex;
     justify-content: center;
     align-items: center;
