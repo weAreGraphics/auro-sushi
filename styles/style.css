@@ -371,8 +371,9 @@ a.category-link {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 260px;
   }
-
+  
   .swiper-slide img {
     display: block;
     width: 100%;
