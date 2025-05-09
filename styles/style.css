@@ -117,7 +117,7 @@ h1 {
     width: 90%;
     margin: auto;
     margin-top: 20px;
-    //margin-bottom: 80px;
+    margin-bottom: 30px;
 }
 
 /* Estilo para cada producto */
@@ -373,7 +373,7 @@ a.category-link {
     align-items: center;
     height: 260px;
   }
-  
+
   .swiper-slide img {
     display: block;
     width: 100%;
