@@ -82,5 +82,8 @@
     { "id": 59, "name": "Teriyaki", "description": "5 unidades envueltos en panko", "price": 1000, "categoryId": 11 },
     { "id": 60, "name": "Acevichada", "description": "5 unidades envueltos en panko", "price": 1000, "categoryId": 11 },
     { "id": 61, "name": "Spicy", "description": "5 unidades envueltos en panko", "price": 1000, "categoryId": 11 },
-    { "id": 62, "name": "Olivo pulpo", "description": "5 unidades envueltos en panko", "price": 1000, "categoryId": 11 }
+    { "id": 62, "name": "Olivo pulpo", "description": "5 unidades envueltos en panko", "price": 1000, "categoryId": 11 },
+
+    { "id": 58, "name": "Bebidas en lata", "description": "Coca-cola, Fanta, Sprite", "price": 1500, "categoryId": 12 },
+    { "id": 59, "name": "Bebidas 1 1/2", "description": "Coca-cola, Fanta, Sprite", "price": 2500, "categoryId": 12 }
 ]

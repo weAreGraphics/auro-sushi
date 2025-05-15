@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {// Archivo principal de la 
     
     // Carrito de compras
     let cart = [];
-    const wsapp = '+56973761422';
+    const wsapp = '+56966324583';
     
     const productsContainer = document.getElementById("products");
     const cartItemsContainer = document.getElementById("cart-items");
