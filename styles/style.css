@@ -183,10 +183,10 @@ h1 {
 }
 
 
-.price{
-    font-size: clamp(.7rem, .9rem, 2rem);
-    font-weight: 400;
+.price {
+    font-size: clamp(.7rem, 1rem, 2rem);
     margin-top: 10px !important;
+    font-weight: bolder;
 }
 /* Controles de cantidad */
 .quantity-controls {
