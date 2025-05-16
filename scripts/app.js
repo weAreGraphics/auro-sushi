@@ -38,7 +38,14 @@ document.addEventListener("DOMContentLoaded", () => {// Archivo principal de la 
                     categoryElement.classList.add("category");
 
                     // Agregar la clase 'category-destacada' al primer div
-                    if (index === 0 || index === 1 || index === 2) {
+                    if (index === 0) {
+                        categoryElement.classList.add("category-destacada");
+                        categoryElement.classList.add("promo");
+                    }
+
+
+                    // Agregar la clase 'category-destacada' al primer div
+                    if (index === 1 || index === 2) {
                         categoryElement.classList.add("category-destacada");
                     }
 
