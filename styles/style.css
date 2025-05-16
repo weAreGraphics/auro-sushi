@@ -246,6 +246,20 @@ h1 {
     border: none !important;
 }
 
+#scrollToTop{
+    display: none;
+    position: fixed;
+    bottom: 60px;
+    right: 10px;
+    z-index: 1000;
+    background-color: #ff5e4c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    rotate: -90deg;
+}
 
 
 a.category-link {

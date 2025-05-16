@@ -488,4 +488,25 @@ var swiper = new Swiper(".mySwiper", {
     },
 });
 
+// Crear referencia al botón "Subir"
+const scrollToTopButton = document.getElementById("scrollToTop");
+
+// Mostrar el botón cuando el usuario haga scroll hacia abajo
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) { // Mostrar el botón si el scroll es mayor a 300px
+        scrollToTopButton.style.display = "block";
+    } else {
+        scrollToTopButton.style.display = "none";
+    }
+});
+
+// Agregar evento al botón para subir al inicio de la página
+scrollToTopButton.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth" // Desplazamiento suave
+    });
+});
+
+
 
