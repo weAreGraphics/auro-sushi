@@ -77,12 +77,6 @@ document.addEventListener("DOMContentLoaded", () => {// Archivo principal de la 
     
                 // Agregar la clase 'selected' a la categoría seleccionada
                 event.currentTarget.classList.add("selected");
-    
-                // Desplazar la sección de productos al inicio de la pantalla
-                const productsSection = document.getElementById("products");
-                if (productsSection) {
-                    productsSection.scrollIntoView({ behavior: "smooth", block: "start" });
-                }
             });
         });
     }

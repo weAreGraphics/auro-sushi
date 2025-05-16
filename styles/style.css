@@ -6,12 +6,13 @@
 }
 body {
     font-family: "Quicksand", sans-serif;
-    background-color: black;
+    
     background-repeat: no-repeat;
 }
 
 html {
     scroll-behavior: smooth;
+    background-color: black;
   }
 
 main{
