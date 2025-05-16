@@ -125,6 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {// Archivo principal de la 
                     `;
                     }
 
+
                     productElement.innerHTML = `
                     <h3>${product.name}</h3>
                     <p>${product.description}</p>
