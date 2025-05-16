@@ -38,12 +38,12 @@ document.addEventListener("DOMContentLoaded", () => {// Archivo principal de la 
                     categoryElement.classList.add("category");
 
                     // Agregar la clase 'category-destacada' al primer div
-                    if (index === 0) {
+                    if (index === 0 || index === 1) {
                         categoryElement.classList.add("category-destacada");
                     }
 
                     categoryElement.innerHTML = `
-                    <a href="#products" class="category-link" data-id="${category.id}" style="text-decoration: none; color: inherit;"> 
+                    <a href="#categories" class="category-link" data-id="${category.id}" style="text-decoration: none; color: inherit;"> 
                         <h3>${category.name}</h3>
                     </a>
                 `;
@@ -64,32 +64,33 @@ document.addEventListener("DOMContentLoaded", () => {// Archivo principal de la 
     }
 
     // Función para configurar los enlaces de las categorías
-    function setupCategoryLinks() {
+        function setupCategoryLinks() {
         const categoryLinks = document.querySelectorAll(".category-link");
         categoryLinks.forEach(link => {
             link.addEventListener("click", (event) => {
                 event.preventDefault(); // Evitar el comportamiento predeterminado del enlace
                 const categoryId = parseInt(link.getAttribute("data-id"));
                 renderProductsByCategory(categoryId); // Renderizar los productos de la categoría seleccionada
-
+    
                 // Remover la clase 'selected' de todas las categorías
                 categoryLinks.forEach(link => link.classList.remove("selected"));
-
+    
                 // Agregar la clase 'selected' a la categoría seleccionada
                 event.currentTarget.classList.add("selected");
-
-                // Desplazar la sección de productos al tope de la página
+    
+                // Desplazar la sección de productos al inicio de la pantalla
                 const productsSection = document.getElementById("products");
                 if (productsSection) {
                     productsSection.scrollIntoView({ behavior: "smooth", block: "start" });
-                } else {
-                    console.warn("The products section is not available in the DOM.");
                 }
             });
         });
     }
 
-    // Función para renderizar productos por categoría
+    
+
+  
+
     // Función para renderizar productos por categoría
     function renderProductsByCategory(categoryId) {
         productsContainer.innerHTML = ""; // Limpiar los productos actuales
@@ -238,79 +239,7 @@ document.addEventListener("DOMContentLoaded", () => {// Archivo principal de la 
             updateCartUI();
         }
     }
-    /* NO
-    function updateCartUI() {
-        cartItemsContainer.innerHTML = ""; // Limpiar el contenido actual del carrito
     
-        if (cart.length === 0) {
-            cartItemsContainer.innerHTML = `<p>El carrito está vacío.</p>`;
-            cartCount.textContent = 0; // Actualizar el contador del ícono del carrito
-            checkoutButton.textContent = "Enviar Pedido por WhatsApp (0 items)";
-            checkoutButton.disabled = true; // Deshabilitar el botón de checkout
-            return;
-        }
-    
-        cartItemsContainer.style.display = "block"; // Mostrar el contenedor del carrito si hay productos
-    
-        // Crear el contenedor del acordeón
-        const accordion = document.createElement("div");
-        accordion.classList.add("accordion");
-    
-        // Crear el encabezado del acordeón
-        const accordionHeader = document.createElement("div");
-        accordionHeader.classList.add("accordion-header");
-        accordionHeader.textContent = `Productos en el carrito (${cart.length})`;
-        accordionHeader.style.cursor = "pointer";
-    
-        // Crear el contenido del acordeón
-        const accordionContent = document.createElement("div");
-        accordionContent.classList.add("accordion-content");
-        accordionContent.style.display = "block"; // Mostrar contenido por defecto
-    
-        // Agregar los productos al contenido del acordeón
-        cart.forEach(item => {
-            const cartItemElement = document.createElement("div");
-            cartItemElement.classList.add("cart-item");
-    
-            // Incluir el nombre de la proteína extra si existe
-            const proteinInfo = item.protein ? ` (Cambio: ${item.protein})` : "";
-    
-            cartItemElement.innerHTML = `
-                <p>${item.name}${proteinInfo} - $${item.price} x ${item.quantity}</p>
-                <div class="cart-item-controls">
-                    <button class="decrease-cart" data-id="${item.id}">-</button>
-                    <span>${item.quantity}</span>
-                    <button class="increase-cart" data-id="${item.id}">+</button>
-                    <button class="remove-cart" data-id="${item.id}">Eliminar</button>
-                </div>
-            `;
-    
-            accordionContent.appendChild(cartItemElement);
-        });
-    
-        // Agregar funcionalidad para mostrar/ocultar el contenido del acordeón
-        accordionHeader.addEventListener("click", () => {
-            const isVisible = accordionContent.style.display === "block";
-            accordionContent.style.display = isVisible ? "none" : "block";
-        });
-    
-        // Agregar el encabezado y el contenido al acordeón
-        accordion.appendChild(accordionHeader);
-        accordion.appendChild(accordionContent);
-    
-        // Agregar el acordeón al contenedor del carrito
-        cartItemsContainer.appendChild(accordion);
-    
-        // Mostrar la cantidad total de productos en el carrito
-        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-        cartCount.textContent = totalItems; // Actualizar el contador del ícono del carrito
-        checkoutButton.textContent = `Enviar Pedido por WhatsApp (${totalItems} items)`;
-        checkoutButton.disabled = false; // Habilitar el botón de checkout
-    
-        // Configurar los botones de edición del carrito
-        setupCartEditButtons();
-    }
-    */
 
     // Configurar botones para agregar productos al carrito
     function setupAddToCartButtons(products) {
@@ -326,77 +255,7 @@ document.addEventListener("DOMContentLoaded", () => {// Archivo principal de la 
     // Llamar a la función para renderizar las categorías
     renderCategories();
 
-    // Función para actualizar la interfaz del carrito con un acordeón
-    // Función para actualizar la interfaz del carrito con un acordeón y controles de edición
     
-    /*
-    function updateCartUI() {
-        cartItemsContainer.innerHTML = ""; // Limpiar el contenido actual del carrito
-    
-        if (cart.length === 0) {
-            cartItemsContainer.innerHTML = `<p>El carrito está vacío.</p>`;
-            cartCount.textContent = 0; // Actualizar el contador del ícono del carrito
-            checkoutButton.textContent = "Enviar Pedido por WhatsApp (0 items)";
-            checkoutButton.disabled = true; // Deshabilitar el botón de checkout
-            return;
-        }
-    
-        //Crear el contenedor del acordeón
-        const accordion = document.createElement("div");
-        accordion.classList.add("accordion");
-    
-        //Crear el encabezado del acordeón
-        const accordionHeader = document.createElement("div");
-        accordionHeader.classList.add("accordion-header");
-        accordionHeader.textContent = `Productos en el carrito (${cart.length})`;
-        accordionHeader.style.cursor = "pointer";
-    
-        //Crear el contenido del acordeón
-        const accordionContent = document.createElement("div");
-        accordionContent.classList.add("accordion-content");
-        accordionContent.style.display = "block"; // Mostrar contenido por defecto
-    
-        //Agregar los productos al contenido del acordeón
-        cart.forEach(item => {
-            const cartItemElement = document.createElement("div");
-            cartItemElement.classList.add("cart-item");
-    
-            cartItemElement.innerHTML = `
-                <p>${item.name} - $${item.price} x ${item.quantity}</p>
-                <div class="cart-item-controls">
-                    <button class="decrease-cart" data-id="${item.id}">-</button>
-                    <span>${item.quantity}</span>
-                    <button class="increase-cart" data-id="${item.id}">+</button>
-                    <button class="remove-cart" data-id="${item.id}">Eliminar</button>
-                </div>
-            `;
-    
-            accordionContent.appendChild(cartItemElement);
-        });
-    
-        //Agregar funcionalidad para mostrar/ocultar el contenido del acordeón
-        accordionHeader.addEventListener("click", () => {
-            const isVisible = accordionContent.style.display === "block";
-            accordionContent.style.display = isVisible ? "none" : "block";
-        });
-    
-        //Agregar el encabezado y el contenido al acordeón
-        accordion.appendChild(accordionHeader);
-        accordion.appendChild(accordionContent);
-    
-        //Agregar el acordeón al contenedor del carrito
-        cartItemsContainer.appendChild(accordion);
-    
-        //Mostrar la cantidad total de productos en el carrito
-        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-        cartCount.textContent = totalItems; // Actualizar el contador del ícono del carrito
-        checkoutButton.textContent = `Enviar Pedido por WhatsApp (${totalItems} items)`;
-        checkoutButton.disabled = false; // Habilitar el botón de checkout
-    
-        //onfigurar los botones de edición del carrito
-        setupCartEditButtons();
-    }
-    */
 
     // Función para enviar el pedido por WhatsApp
     function sendOrder() {
@@ -431,83 +290,6 @@ document.addEventListener("DOMContentLoaded", () => {// Archivo principal de la 
     // Asociar la función al botón de checkout
     checkoutButton.addEventListener("click", sendOrder);
 
-
-    // Función para actualizar la interfaz del carrito con un acordeón y un div para edición
-    /*
-    function updateCartUI() {
-        cartItemsContainer.innerHTML = ""; // Limpiar el contenido actual del carrito
-    
-        if (cart.length === 0) {
-            cartItemsContainer.innerHTML = `<p>El carrito está vacío.</p>`;
-            return;
-        }
-    
-        // Crear el contenedor del acordeón
-        const accordion = document.createElement("div");
-        accordion.classList.add("accordion");
-    
-        // Crear el encabezado del acordeón
-        const accordionHeader = document.createElement("div");
-        accordionHeader.classList.add("accordion-header");
-        accordionHeader.textContent = `Productos en el carrito (${cart.length})`;
-        accordionHeader.style.cursor = "pointer";
-    
-        // Crear el contenido del acordeón
-        const accordionContent = document.createElement("div");
-        accordionContent.classList.add("accordion-content");
-        accordionContent.style.display = "none"; // Ocultar contenido por defecto
-    
-        // Agregar los productos al contenido del acordeón
-        cart.forEach(item => {
-            const cartItemElement = document.createElement("div");
-            cartItemElement.classList.add("cart-item");
-    
-            cartItemElement.innerHTML = `
-                <p>${item.name} - $${item.price} x ${item.quantity}</p>
-                <div class="cart-item-controls">
-                    <button class="decrease-cart" data-id="${item.id}">-</button>
-                    <span>${item.quantity}</span>
-                    <button class="increase-cart" data-id="${item.id}">+</button>
-                    <button class="remove-cart" data-id="${item.id}">Eliminar</button>
-                </div>
-            `;
-    
-            accordionContent.appendChild(cartItemElement);
-        });
-    
-        // Agregar funcionalidad para mostrar/ocultar el contenido del acordeón
-        accordionHeader.addEventListener("click", () => {
-            const isVisible = accordionContent.style.display === "block";
-            accordionContent.style.display = isVisible ? "none" : "block";
-        });
-    
-        // Agregar el encabezado y el contenido al acordeón
-        accordion.appendChild(accordionHeader);
-        accordion.appendChild(accordionContent);
-    
-        // Crear un nuevo div para la edición del carrito
-        const cartEditContainer = document.createElement("div");
-        cartEditContainer.id = "cart-edit-container";
-        cartEditContainer.innerHTML = `
-            <h3>Editar Carrito</h3>
-            <p>Usa los botones para modificar las cantidades o eliminar productos.</p>
-        `;
-        cartEditContainer.appendChild(accordion);
-    
-        // Agregar el contenedor de edición al carrito
-        cartItemsContainer.appendChild(cartEditContainer);
-    
-        // Mostrar la cantidad total de productos en el carrito
-        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-        cartCount.textContent = totalItems; // Actualizar el contador del ícono del carrito
-        checkoutButton.textContent = `Enviar Pedido por WhatsApp (${totalItems} items)`;
-    
-        // Configurar los botones de edición del carrito
-        setupCartEditButtons();
-    }
-    */
-
-    // Función para configurar los botones de edición del carrito
     // Función para configurar los botones de edición del carrito
     function setupCartEditButtons() {
         const increaseButtons = document.querySelectorAll(".increase-cart");
@@ -598,85 +380,13 @@ document.addEventListener("DOMContentLoaded", () => {// Archivo principal de la 
         });
     }
 
-    // Función para actualizar la interfaz del carrito
     
-   /*
-    function updateCartUI() {
-        cartItemsContainer.innerHTML = ""; // Limpiar el contenido actual del carrito
-    
-        if (cart.length === 0) {
-            cartItemsContainer.style.display = "none"; // Ocultar el contenedor del carrito
-            //cartCount.textContent = 0; // Actualizar el contador del ícono del carrito
-            checkoutButton.textContent = "Enviar Pedido por WhatsApp (0 items)";
-            checkoutButton.disabled = true; // Deshabilitar el botón de checkout
-            return;
-        }
-    
-        cartItemsContainer.style.display = "block"; // Mostrar el contenedor del carrito si hay productos
-    
-        // Crear el contenedor del acordeón
-        const accordion = document.createElement("div");
-        accordion.classList.add("accordion");
-    
-        // Crear el encabezado del acordeón
-        const accordionHeader = document.createElement("div");
-        accordionHeader.classList.add("accordion-header");
-        accordionHeader.textContent = `Productos en el carrito (${cart.length})`;
-        accordionHeader.style.cursor = "pointer";
-    
-        // Crear el contenido del acordeón
-        const accordionContent = document.createElement("div");
-        accordionContent.classList.add("accordion-content");
-        accordionContent.style.display = "block"; // Ocultar contenido por defecto
-    
-        // Agregar los productos al contenido del acordeón
-        cart.forEach(item => {
-            const cartItemElement = document.createElement("div");
-            cartItemElement.classList.add("cart-item");
-    
-            cartItemElement.innerHTML = `
-                <p>${item.name} - $${item.price} x ${item.quantity}</p>
-                <div class="cart-item-controls">
-                    <button class="decrease-cart" data-id="${item.id}">-</button>
-                    <span>${item.quantity}</span>
-                    <button class="increase-cart" data-id="${item.id}">+</button>
-                    <button class="remove-cart" data-id="${item.id}">Eliminar</button>
-                </div>
-            `;
-    
-            accordionContent.appendChild(cartItemElement);
-        });
-    
-        // Agregar funcionalidad para mostrar/ocultar el contenido del acordeón
-        accordionHeader.addEventListener("click", () => {
-            const isVisible = accordionContent.style.display === "block";
-            accordionContent.style.display = isVisible ? "none" : "block";
-        });
-    
-        // Agregar el encabezado y el contenido al acordeón
-        accordion.appendChild(accordionHeader);
-        accordion.appendChild(accordionContent);
-    
-        // Agregar el acordeón al contenedor del carrito
-        cartItemsContainer.appendChild(accordion);
-    
-        // Mostrar la cantidad total de productos en el carrito
-        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-        //cartCount.textContent = totalItems; // Actualizar el contador del ícono del carrito
-        checkoutButton.textContent = `Enviar Pedido por WhatsApp`;
-        checkoutButton.disabled = false; // Habilitar el botón de checkout
-    
-        // Configurar los botones de edición del carrito
-        setupCartEditButtons();
-    }
-    
-   */
   function updateCartUI() {
     cartItemsContainer.innerHTML = ""; // Limpiar el contenido actual del carrito
 
     if (cart.length === 0) {
         cartItemsContainer.style.display = "none"; // Ocultar el contenedor del carrito
-        checkoutButton.textContent = "Enviar Pedido por WhatsApp (0 items)";
+        checkoutButton.textContent = "Enviar Pedido por WhatsApp";
         checkoutButton.disabled = true; // Deshabilitar el botón de checkout
         return;
     }
@@ -734,7 +444,7 @@ document.addEventListener("DOMContentLoaded", () => {// Archivo principal de la 
 
     // Mostrar la cantidad total de productos en el carrito
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-    checkoutButton.textContent = `Enviar Pedido por WhatsApp (${totalItems} items)`;
+    checkoutButton.textContent = `Enviar Pedido por WhatsApp`;
     checkoutButton.disabled = false; // Habilitar el botón de checkout
 
     // Configurar los botones de edición del carrito
@@ -757,38 +467,6 @@ function loadCartFromLocalStorage() {
     }
 }
 
-// Función para enviar el pedido por WhatsApp
-/*
-function sendOrder() {
-    if (cart.length === 0) {
-        alert("El carrito está vacío. Agrega productos antes de enviar el pedido.");
-        return;
-    }
-
-    // Generar los detalles del pedido
-    const orderDetails = cart
-        .map(item => `${item.name} x${item.quantity} - $${(item.price * item.quantity)}`)
-        .join("\n");
-
-    const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-
-    // Crear el mensaje para WhatsApp
-    const message = `Hola, me gustaría realizar el siguiente pedido:\n\n${orderDetails}\n\nTotal: $${total}`;
-    const whatsappUrl = `https://wa.me/${wsapp}?text=${encodeURIComponent(message)}`;
-
-    // Abrir WhatsApp en una nueva pestaña
-    window.open(whatsappUrl, "_blank");
-
-    // Vaciar el carrito después de enviar el pedido
-    cart = [];
-    localStorage.removeItem("cart"); // Eliminar el carrito de localStorage
-    updateCartUI(); // Actualizar la interfaz del carrito
-}
-*/
-
-
-
-
 //swiper
 var swiper = new Swiper(".mySwiper", {
     spaceBetween: 10,
@@ -807,3 +485,5 @@ var swiper = new Swiper(".mySwiper", {
         prevEl: ".swiper-button-prev",
     },
 });
+
+

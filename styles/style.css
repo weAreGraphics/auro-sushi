@@ -2,13 +2,17 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Quicksand';
 }
 body {
     font-family: "Quicksand", sans-serif;
-    
-    background-color: white;
+    background-color: black;
     background-repeat: no-repeat;
 }
+
+html {
+    scroll-behavior: smooth;
+  }
 
 main{
     margin-bottom: 80px;
@@ -163,7 +167,7 @@ h1 {
 
 /* Botón para agregar al carrito */
 .product button {
-    background-color: orange;
+    background-color: #ff5e4c;
     color: white;
     border: none;
     padding: 10px 15px;
@@ -218,12 +222,10 @@ h1 {
 #categories {
     width: 90%;
     margin: auto !important;
-    margin-top: 20px !important;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 10px;
-    
 }
 
 .category{
@@ -232,6 +234,10 @@ h1 {
 
 .category-destacada{
     width: 100% !important;
+}
+
+.category-destacada a{
+    background-color: #eee;
 }
 
 a.category-link {
@@ -360,22 +366,33 @@ a.category-link {
     background-color: #e64a19;
 }
 
+.add-to-cart {
+    margin-top: 10px;
+}
+
+select {
+    width: 50%;
+    height: 25px;
+    border-radius: 8px;
+    text-align: center;
+}
+
 /* Estilo para el botón de checkout fijo en la parte inferior */
 #checkout {
-    position: fixed; /* Fijar el botón en la parte inferior */
-    bottom: 10px; /* Alinear al borde inferior */
-    width: 90%; /* Ocupa todo el ancho de la ventana */
-    background-color: black; /* Color de fondo */
-    color: white; /* Color del texto */
-    border: none; /* Sin bordes */
-    padding: 15px 20px; /* Espaciado interno */
-    font-size: clamp(.7rem, .9rem, 2rem); /* Tamaño de fuente */
-    text-align: center; /* Centrar el texto */
-    cursor: pointer; /* Cambiar el cursor al pasar el mouse */
-    z-index: 1000; /* Asegurar que esté por encima de otros elementos */
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    background-color: orange;
+    color: black;
+    border: none;
+    padding: 15px 20px;
+    font-size: clamp(.7rem, .9rem, 2rem);
+    text-align: center;
+    cursor: pointer;
+    z-index: 1000;
     transition: background-color 0.2s ease;
-    border-radius: 10px/* Transición para el hover */
+    font-weight: bolder;
+    font-size: 16px;
 }
 
 #checkout:hover {
@@ -386,17 +403,21 @@ a.category-link {
     margin-bottom: 10px;
     width: 90%;
 }
+
+label{
+    font-size: 12px;
+}
 /* swiper */
 
 .vitrina img {
     width: 100%;
-    height: 100%;
+    height: 80px;
     object-fit: cover;
     border-radius: 10px;
 }
 .swiper {
-    width: 100%;
-    height: 250px;
+    width: 90%;
+    height: 200px;
   }
 
   .swiper-slide {
@@ -406,8 +427,7 @@ a.category-link {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 220px;
-    //width: 190px !important;
+    height: 170px;
     border-radius: 20px;
   }
 
@@ -417,3 +437,12 @@ a.category-link {
     height: 100%;
     object-fit: cover;
   }
+
+  span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background-color: orange !important;
+}
+
+span.swiper-pagination-bullet {
+    background-color: white !important;
+}
+

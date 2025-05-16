@@ -1,15 +1,13 @@
 [
     { "id": 1, "name": "Handroll", "image": "images/sushi-clasico.jpg" },
     { "id": 2, "name": "Handroll Vip", "image": "images/rollos-especiales.jpg" },
-    { "id": 3, "name": "AuroBurger", "image": "images/temaki.jpg" },
-    { "id": 4, "name": "AuroBurger Vip", "image": "images/temaki.jpg" },
+    { "id": 3, "name": "Sushi burger", "image": "images/temaki.jpg" },
+    { "id": 4, "name": "Sushi burger Vip", "image": "images/temaki.jpg" },
     { "id": 5, "name": "Gohan", "image": "images/rollos-especiales.jpg" },
-    { "id": 6, "name": "Nigiri", "image": "images/nigiri.jpg" },
-    { "id": 7, "name": "Sashimi", "image": "images/sashimi.jpg" },
-    { "id": 8, "name": "Entradas", "image": "images/entradas.jpg" },
-    { "id": 9, "name": "Ceviches", "image": "images/bebidas.jpg" },
-    { "id": 10, "name": "Apanados y más", "image": "images/postres.jpg" },
-    { "id": 11, "name": "Salsas", "image": "images/postres.jpg" },
-    { "id": 12, "name": "Bebidas", "image": "images/postres.jpg" }
+    { "id": 6, "name": "Sashimi", "image": "images/sashimi.jpg" },
+    { "id": 7, "name": "Ceviches", "image": "images/bebidas.jpg" },
+    { "id": 8, "name": "Apanados y más", "image": "images/postres.jpg" },
+    { "id": 9, "name": "Salsas", "image": "images/postres.jpg" },
+    { "id": 10, "name": "Bebidas", "image": "images/postres.jpg" }
     
 ]
