@@ -1,7 +1,7 @@
 [
+    { "id": 11, "name": "Promociones", "image": "images/postres.jpg" },
     { "id": 1, "name": "Handroll", "image": "images/sushi-clasico.jpg" },
     { "id": 2, "name": "Handroll Vip", "image": "images/rollos-especiales.jpg" },
-    { "id": 11, "name": "Promociones", "image": "images/postres.jpg" },
     { "id": 3, "name": "Sushi burger", "image": "images/temaki.jpg" },
     { "id": 4, "name": "Sushi burger Vip", "image": "images/temaki.jpg" },
     { "id": 5, "name": "Gohan", "image": "images/rollos-especiales.jpg" },
