@@ -52,7 +52,7 @@
     { "id": 71, "name": "Olivo pulpo", "description": "5 unidades envueltos en panko", "price": 1000, "categoryId": 9},
 
     { "id": 72, "name": "Bebidas en lata", "description": "Coca-cola, Fanta, Sprite", "price": 1500, "categoryId": 10 },
-    { "id": 73, "name": "Bebidas 1 1/2", "description": "Coca-cola, Fanta, Sprite", "price": 2500, "categoryId": 10 },
+    { "id": 73, "name": "Bebidas 1 1/2", "description": "Coca-cola, Fanta, Sprite", "price": 3000, "categoryId": 10 },
 
     { "id": 67, "name": "20 piezas", "description": "10- salmón, queso crema, cebollín, (env.palta) <br> 10- vegetal, queso crema, palta, (env.sesamo)", "price": 8500, "categoryId": 11},
     { "id": 68, "name": "20 piezas vip", "description": "10- camarón, queso crema, cebollín (env.palta) <br> 10- pollo, queso crema, cebollín (env.panko)", "price": 9900, "categoryId": 11},
